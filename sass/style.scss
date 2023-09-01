@@ -1,0 +1,49 @@
+@use 'initial';
+@use 'variables';
+@use 'header';
+@use 'navbar';
+@use 'navbar-modal';
+@use 'gallery';
+@use 'details';
+@use 'input';
+@use 'modal-cart';
+@use 'modal-gallery';
+
+
+
+.main-container{
+    width: 375px;
+    margin: auto;
+    position: relative;
+    @media (min-width: 1115px){
+            width: 1115px;
+    }
+}
+.content{
+    @media (min-width:1115px){
+        display: flex;
+        padding: 90px;
+        gap: 95px;
+    }
+}
+
+.show{
+    display: block;
+}
+
+.cart-empty{
+    text-align: center;
+    margin-top: 30px;
+    font-weight: 700;
+    color: variables.$Black-modal;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+  }
+  
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
+  

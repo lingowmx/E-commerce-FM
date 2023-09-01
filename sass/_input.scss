@@ -1,0 +1,27 @@
+@use 'variables' as v;
+@use 'mixins';
+
+.input {
+    height: 57px;
+    display: flex;
+    justify-content: space-between;
+    background-color: v.$Light-grayish-blue;
+    border-radius: 8px;
+    
+    &__minus {
+        @include mixins.changeNumber(25px, 3px);
+    }
+    &__number {
+        width: 100%;
+        border: none;
+        text-align: center;
+        background-color: v.$Light-grayish-blue;
+        font-family: v.$Font;
+        font-size: 1.2em;
+        outline: none
+    }
+
+    &__plus {
+        @include mixins.changeNumber(19px, 3px);
+    }
+}

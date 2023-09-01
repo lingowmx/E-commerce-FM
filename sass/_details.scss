@@ -1,0 +1,80 @@
+@use 'variables' as v;
+//puedo utilizar un nombre para@use 
+@use 'mixins';
+
+.details{
+    padding: 24px;
+    &__company{
+        color: v.$Orange;
+        text-transform: uppercase;
+        font-size: 1em;
+        letter-spacing: 2px;
+        margin-bottom: 12px;
+    }
+    &__title{
+        font-size: 1.7em;
+        margin-bottom: 16px;
+    }
+    &__description{
+        font-size: .94em;
+        color: v.$Dark-grayish-blue;
+        line-height: 24px;
+        margin-bottom: 24px;
+    }
+    &__prices{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 24px;
+        align-items: center;
+    }
+    &__now{
+        font-size: 1.8em;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+    }
+    &__disccount{
+        font-size: 0.5em;
+        background-color: v.$Pale-orange;
+        color: v.$Orange;
+        padding: 4px;
+        border-radius: 4px;
+    }
+    &__before{
+        font-size: 1em;
+        font-weight: 700;
+        color: v.$Dark-grayish-blue;
+        text-decoration: line-through;
+    }
+    &__button{
+        @include mixins.button;
+    }
+    @media (min-width:1115px){
+        padding: 45px 0 0;
+        width: 446px;
+        height: auto;
+        &__company{
+            font-size: 1.5em;
+            margin-bottom: 16px;
+        }
+        &__title{
+            font-size: 2.7em;
+            margin-bottom: 20px;
+        }
+        &__description{
+            // font-size: 1.2em;
+            line-height: 28px;
+        }
+        &__prices{
+            flex-direction: column;
+            align-items: flex-start;  //USO DE FLEX START*********
+        }
+        &__product-quantity{ 
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+    }
+}

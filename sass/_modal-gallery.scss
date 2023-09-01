@@ -1,0 +1,63 @@
+@use 'variables' as v;
+@use 'mixins';
+
+.modal-gallery {
+    // border: 4px solid red;
+    width: 600px;
+
+
+    &__background {
+        @include mixins.modal-background;
+        display: none;
+        // display: grid;
+        place-content: center;
+    }
+    &__close-container{
+        text-align: right;
+        // height: 30px;    
+    }
+    &__close {
+        width: 16px;
+        color: v.$White;
+
+        &:hover {
+            cursor: pointer;
+            content: url(../images/icon-close-orange.svg);
+        }
+    }
+
+    &__image-container {
+        background-image: url(../images/image-product-1.jpg);
+        height: 540px;
+        background-size: cover;
+        border-radius: 16px;
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+    &__thumbnails {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__thumbnail {
+        width: 90px;
+        border-radius: 16px;
+
+        &:hover {
+            cursor: pointer;
+            border: 2px solid v.$Orange;
+        }
+    }
+
+    &__previous {
+        //para codigos que se repiten se usan mixins
+        @include mixins.image_btn(200px, -18px, true);
+    }
+
+    &__next {
+        @include mixins.image_btn(200px, 574px, true);
+
+    }
+
+}
